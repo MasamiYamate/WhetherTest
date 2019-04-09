@@ -16,8 +16,8 @@ class AreaSuggestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CityTagRepository.init().request({_ in
-            
+        CityTagRepository.init().request({data in
+            CityTagTranslater.translate(data!)
         })
         // Do any additional setup after loading the view.
     }

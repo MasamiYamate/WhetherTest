@@ -25,6 +25,8 @@
 		D084DAB9225C8A2D0068BC7F /* CityTagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084DAB8225C8A2D0068BC7F /* CityTagRepository.swift */; };
 		D084DABB225C8A5A0068BC7F /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084DABA225C8A5A0068BC7F /* RepositoryProtocol.swift */; };
 		D084DABF225C8C360068BC7F /* CityTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084DABE225C8C360068BC7F /* CityTagModel.swift */; };
+		D0A02CD0225C973100FCB2F4 /* CityTagTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */; };
+		D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */; };
 		F05AFAF108B8E671A476D09C /* Pods_WhetherTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9A39E9414DE2D60A04B313 /* Pods_WhetherTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		D084DAB8225C8A2D0068BC7F /* CityTagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTagRepository.swift; sourceTree = "<group>"; };
 		D084DABA225C8A5A0068BC7F /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		D084DABE225C8C360068BC7F /* CityTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTagModel.swift; sourceTree = "<group>"; };
+		D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTagTranslater.swift; sourceTree = "<group>"; };
+		D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslaterProtocol.swift; sourceTree = "<group>"; };
 		E5B3C7C56BB2BD99BD430EA9 /* Pods-WhetherTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTest.debug.xcconfig"; path = "Target Support Files/Pods-WhetherTest/Pods-WhetherTest.debug.xcconfig"; sourceTree = "<group>"; };
 		F6C21BC8AA33122A647ED61C /* Pods-WhetherTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestTests.debug.xcconfig"; path = "Target Support Files/Pods-WhetherTestTests/Pods-WhetherTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +280,7 @@
 		D084DABC225C8BC20068BC7F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				D0A02CCE225C970800FCB2F4 /* Translater */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -286,6 +291,15 @@
 				D084DABE225C8C360068BC7F /* CityTagModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D0A02CCE225C970800FCB2F4 /* Translater */ = {
+			isa = PBXGroup;
+			children = (
+				D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */,
+				D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */,
+			);
+			path = Translater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +526,7 @@
 				D084DAA9225C715B0068BC7F /* APIRequestProtocol.swift in Sources */,
 				D084DAAB225C782B0068BC7F /* CityTagRequest.swift in Sources */,
 				D084DAA0225C69EB0068BC7F /* AreaSuggestViewController.swift in Sources */,
+				D0A02CD0225C973100FCB2F4 /* CityTagTranslater.swift in Sources */,
 				D084DA70225C689E0068BC7F /* AppDelegate.swift in Sources */,
 				D084DAB2225C7DD50068BC7F /* DataStoreProtocol.swift in Sources */,
 				D084DABB225C8A5A0068BC7F /* RepositoryProtocol.swift in Sources */,
@@ -520,6 +535,7 @@
 				D084DAB5225C86700068BC7F /* XMLDataParser.swift in Sources */,
 				D084DAAF225C7B920068BC7F /* CityTagDataStore.swift in Sources */,
 				D084DABF225C8C360068BC7F /* CityTagModel.swift in Sources */,
+				D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
