@@ -10,7 +10,7 @@
 
 import Foundation
 
-public protocol RepositoryProtocol {
+protocol RepositoryProtocol {
     associatedtype Callback
     
     func request(_ callback: @escaping (Callback) -> Void)

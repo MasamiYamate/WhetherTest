@@ -11,28 +11,33 @@ import SwiftyXMLParser
 
 class CityTagUseCase {
     
-    /// MARK: Presenterからアクセスするデータ群
+    // MARK: Presenterからアクセスするデータ群
     private var cityData: CityModels?
     
-    /// MARK: データリクエストに必要なリポジトリ
+    // MARK: データリクエストに必要なリポジトリ
     private var cityTagRepository: CityTagRepository
+    private var tmpDataRepository: TmpDataRepository
     
-    /// MARK: 初期化
-    
+    // MARK: 初期化
     init() {
         cityTagRepository = CityTagRepository()
+        tmpDataRepository = TmpDataRepository()
+        //TmpDataがある場合は、初期化時に取得しておく
+        cityData = tmpDataRepository.cityData
     }
     
     func request (_ callback: (() -> (Void))?) {
         cityTagRepository.request({ res in
             if let xml: XML.Accessor = res , let tmpCityData: CityModels = CityTagTranslater.translate(xml) {
                 self.cityData = tmpCityData
+                //CityTagは後からも使うため、アプリ内のTmpDataとして保持させる
+                self.tmpDataRepository.cityData = tmpCityData
             }
             callback?()
         })
     }
 
-    /// MARK: データ取得関連
+    // MARK: データ取得関連
     
     /// 全国のエリア名を取得します
     ///

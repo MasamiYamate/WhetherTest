@@ -50,8 +50,20 @@ class CityModels: NSObject {
                     }
                 }
                 //地域名をKeyに各CityModelをディクショナリーにセット
-                _cityModels[areaName] = tmpCityModels
+                //道南のみ複数存在しているため、既にkeyが存在する場合は
+                //既存の配列の末尾に追加する
+                if let existData: [CityModel] = _cityModels[areaName] {
+                    //既にKeyが存在する場合は末尾に追加
+                    _cityModels[areaName] = existData + tmpCityModels
+                }else{
+                    _cityModels[areaName] = tmpCityModels
+                }
             }
+        }
+        //全てのデータ処理後、名称の配列から重複値を取り除く
+        let orderdSet: NSOrderedSet = NSOrderedSet(array: _areas)
+        if let orderdSetAreas: [String] = orderdSet.array as? [String] {
+            _areas = orderdSetAreas
         }
     }
 }

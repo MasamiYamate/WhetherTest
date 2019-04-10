@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol TranslaterProtocol {
+protocol TranslaterProtocol {
     associatedtype Input
     associatedtype Output
     

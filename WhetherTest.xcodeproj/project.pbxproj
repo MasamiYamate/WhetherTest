@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,11 @@
 		D09226B9225CE1F2001E4C7E /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09226B8225CE1F2001E4C7E /* Weather.storyboard */; };
 		D0A02CD0225C973100FCB2F4 /* CityTagTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */; };
 		D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */; };
+		D0A02CD6225D77DA00FCB2F4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CD5225D77DA00FCB2F4 /* LoadingViewController.swift */; };
+		D0A02CD8225D788300FCB2F4 /* LoadingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CD7225D788300FCB2F4 /* LoadingViewPresenter.swift */; };
+		D0A02CDA225D78BC00FCB2F4 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CD9225D78BC00FCB2F4 /* PresenterProtocol.swift */; };
+		D0A02CDC225D7F9400FCB2F4 /* TmpDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDB225D7F9400FCB2F4 /* TmpDataStore.swift */; };
+		D0A02CDE225D814E00FCB2F4 /* TmpDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		D09226B8225CE1F2001E4C7E /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTagTranslater.swift; sourceTree = "<group>"; };
 		D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslaterProtocol.swift; sourceTree = "<group>"; };
+		D0A02CD5225D77DA00FCB2F4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		D0A02CD7225D788300FCB2F4 /* LoadingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewPresenter.swift; sourceTree = "<group>"; };
+		D0A02CD9225D78BC00FCB2F4 /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
+		D0A02CDB225D7F9400FCB2F4 /* TmpDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpDataStore.swift; sourceTree = "<group>"; };
+		D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpDataRepository.swift; sourceTree = "<group>"; };
 		E64A4F152D504A576F8D3E9B /* Pods-WhetherTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestUITests.release.xcconfig"; path = "Target Support Files/Pods-WhetherTestUITests/Pods-WhetherTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +197,9 @@
 		D084DA9D225C69850068BC7F /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				D09226B7225CE1D9001E4C7E /* Weather */,
+				D0A02CD3225D776E00FCB2F4 /* MainStory */,
+				D09226B7225CE1D9001E4C7E /* WeatherStory */,
+				D0A02CD9225D78BC00FCB2F4 /* PresenterProtocol.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -240,6 +252,7 @@
 			children = (
 				D084DAAE225C7B920068BC7F /* CityTagDataStore.swift */,
 				D084DAB1225C7DD50068BC7F /* DataStoreProtocol.swift */,
+				D0A02CDB225D7F9400FCB2F4 /* TmpDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 			children = (
 				D084DAB8225C8A2D0068BC7F /* CityTagRepository.swift */,
 				D084DABA225C8A5A0068BC7F /* RepositoryProtocol.swift */,
+				D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -288,13 +302,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D09226B7225CE1D9001E4C7E /* Weather */ = {
+		D09226B7225CE1D9001E4C7E /* WeatherStory */ = {
 			isa = PBXGroup;
 			children = (
 				D084DA9E225C69BE0068BC7F /* AreaSuggestView */,
 				D09226B8225CE1F2001E4C7E /* Weather.storyboard */,
 			);
-			path = Weather;
+			path = WeatherStory;
 			sourceTree = "<group>";
 		};
 		D0A02CCE225C970800FCB2F4 /* Translater */ = {
@@ -304,6 +318,23 @@
 				D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */,
 			);
 			path = Translater;
+			sourceTree = "<group>";
+		};
+		D0A02CD3225D776E00FCB2F4 /* MainStory */ = {
+			isa = PBXGroup;
+			children = (
+				D0A02CD4225D77C200FCB2F4 /* LoadingView */,
+			);
+			path = MainStory;
+			sourceTree = "<group>";
+		};
+		D0A02CD4225D77C200FCB2F4 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				D0A02CD5225D77DA00FCB2F4 /* LoadingViewController.swift */,
+				D0A02CD7225D788300FCB2F4 /* LoadingViewPresenter.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		FC28C4B6C8EE0F01FCB40CC0 /* Frameworks */ = {
@@ -476,22 +507,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhetherTest/Pods-WhetherTest-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WhetherTest/Pods-WhetherTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WhetherTest/Pods-WhetherTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -550,12 +570,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D084DAA9225C715B0068BC7F /* APIRequestProtocol.swift in Sources */,
+				D0A02CDC225D7F9400FCB2F4 /* TmpDataStore.swift in Sources */,
 				D084DAAB225C782B0068BC7F /* CityTagRequest.swift in Sources */,
+				D0A02CD6225D77DA00FCB2F4 /* LoadingViewController.swift in Sources */,
 				D084DAA0225C69EB0068BC7F /* AreaSuggestViewController.swift in Sources */,
 				D0A02CD0225C973100FCB2F4 /* CityTagTranslater.swift in Sources */,
 				D084DA70225C689E0068BC7F /* AppDelegate.swift in Sources */,
+				D0A02CD8225D788300FCB2F4 /* LoadingViewPresenter.swift in Sources */,
+				D0A02CDE225D814E00FCB2F4 /* TmpDataRepository.swift in Sources */,
 				D084DAB2225C7DD50068BC7F /* DataStoreProtocol.swift in Sources */,
 				D084DABB225C8A5A0068BC7F /* RepositoryProtocol.swift in Sources */,
+				D0A02CDA225D78BC00FCB2F4 /* PresenterProtocol.swift in Sources */,
 				D084DAB9225C8A2D0068BC7F /* CityTagRepository.swift in Sources */,
 				D084DAA5225C6C770068BC7F /* Parameters.swift in Sources */,
 				D09226B6225CD92B001E4C7E /* CityTagUseCase.swift in Sources */,

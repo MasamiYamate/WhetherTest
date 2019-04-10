@@ -8,9 +8,8 @@
 
 import Foundation
 
-public protocol DataStoreProtocol {
+protocol DataStoreProtocol {
     associatedtype Output
 
     func request (_ callback: @escaping (Output?) -> Void)
-
 }
