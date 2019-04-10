@@ -31,6 +31,11 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
         viewController?.AreaSelectTableView.dataSource = self
     }
     
+    // MARK: UIイベントなど
+    func jumpToWhetherDetailView (_ cityId: String) {
+        viewController?.performSegue(withIdentifier: "AreaSelectViewToWhetherDetailView", sender: cityId)
+    }
+
 }
 
 extension AreaSelectViewPresenter: UITableViewDelegate , UITableViewDataSource {
@@ -75,6 +80,8 @@ extension AreaSelectViewPresenter: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.accessoryType = .disclosureIndicator
+        
         let areas = cityTagUseCase.getAreas()
         if indexPath.section < areas.count {
             let name: String = areas[indexPath.section]
@@ -87,6 +94,17 @@ extension AreaSelectViewPresenter: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let areas = cityTagUseCase.getAreas()
+        if indexPath.section < areas.count {
+            let name: String = areas[indexPath.section]
+            let citys = cityTagUseCase.getCitys(name)
+            let setCity = citys[indexPath.row]
+            let cityId = setCity.id
+            self.jumpToWhetherDetailView(cityId)
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
     
 }
 

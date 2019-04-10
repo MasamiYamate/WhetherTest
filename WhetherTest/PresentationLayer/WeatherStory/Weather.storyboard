@@ -51,11 +51,27 @@
                     <navigationItem key="navigationItem" id="drc-Tg-TKy"/>
                     <connections>
                         <outlet property="AreaSelectTableView" destination="DQp-BD-O3N" id="OJf-hr-PzB"/>
+                        <segue destination="gjq-Xr-lqe" kind="show" identifier="AreaSelectViewToWhetherDetailView" id="JY7-da-Vam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhC-7N-F1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="671" y="81"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gt8-P7-Hzw">
+            <objects>
+                <viewController id="gjq-Xr-lqe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gHr-sB-p8h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1J2-iD-YQO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uit-t8-Xc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="81"/>
         </scene>
     </scenes>
 </document>
