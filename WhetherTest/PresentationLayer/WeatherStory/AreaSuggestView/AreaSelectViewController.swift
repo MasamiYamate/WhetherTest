@@ -12,7 +12,7 @@ import UIKit
 
 class AreaSelectViewController: UIViewController {
     
-    
+    @IBOutlet weak var AreaSelectTableView: UITableView!
     
     var presenter = AreaSelectViewPresenter()
 
