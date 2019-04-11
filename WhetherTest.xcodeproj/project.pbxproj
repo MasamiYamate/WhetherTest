@@ -16,6 +16,8 @@
 		D0844BC6225ECE47002D9718 /* DailyWhetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0844BC5225ECE47002D9718 /* DailyWhetherView.swift */; };
 		D0844BC8225ED5B1002D9718 /* WhetherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0844BC7225ED5B1002D9718 /* WhetherRequest.swift */; };
 		D0844BCA225EDAD0002D9718 /* WhetherDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0844BC9225EDAD0002D9718 /* WhetherDataStore.swift */; };
+		D0844BCC225EE03B002D9718 /* WhetherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0844BCB225EE03B002D9718 /* WhetherRepository.swift */; };
+		D0844BCE225EE2A1002D9718 /* WhetherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0844BCD225EE2A1002D9718 /* WhetherDataModel.swift */; };
 		D084DA70225C689E0068BC7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084DA6F225C689E0068BC7F /* AppDelegate.swift */; };
 		D084DA75225C689E0068BC7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D084DA73225C689E0068BC7F /* Main.storyboard */; };
 		D084DA77225C68A00068BC7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D084DA76225C68A00068BC7F /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		D0A02CE0225D87C400FCB2F4 /* AreaSelectViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDF225D87C400FCB2F4 /* AreaSelectViewPresenter.swift */; };
 		D0A02CE4225D8FBE00FCB2F4 /* AreaNameHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A02CE3225D8FBE00FCB2F4 /* AreaNameHeaderView.xib */; };
 		D0A02CE6225D8FD300FCB2F4 /* AreaNameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */; };
+		D0CD54C9225EFFB9009BCF61 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */; };
+		D0CD54CB225F0CC7009BCF61 /* WhetherTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,8 @@
 		D0844BC5225ECE47002D9718 /* DailyWhetherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWhetherView.swift; sourceTree = "<group>"; };
 		D0844BC7225ED5B1002D9718 /* WhetherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherRequest.swift; sourceTree = "<group>"; };
 		D0844BC9225EDAD0002D9718 /* WhetherDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherDataStore.swift; sourceTree = "<group>"; };
+		D0844BCB225EE03B002D9718 /* WhetherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherRepository.swift; sourceTree = "<group>"; };
+		D0844BCD225EE2A1002D9718 /* WhetherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherDataModel.swift; sourceTree = "<group>"; };
 		D084DA6C225C689E0068BC7F /* WhetherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhetherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D084DA6F225C689E0068BC7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D084DA74225C689E0068BC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		D0A02CDF225D87C400FCB2F4 /* AreaSelectViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSelectViewPresenter.swift; sourceTree = "<group>"; };
 		D0A02CE3225D8FBE00FCB2F4 /* AreaNameHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaNameHeaderView.xib; sourceTree = "<group>"; };
 		D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaNameHeaderView.swift; sourceTree = "<group>"; };
+		D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherTranslater.swift; sourceTree = "<group>"; };
 		E64A4F152D504A576F8D3E9B /* Pods-WhetherTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestUITests.release.xcconfig"; path = "Target Support Files/Pods-WhetherTestUITests/Pods-WhetherTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +198,7 @@
 		D084DA6E225C689E0068BC7F /* WhetherTest */ = {
 			isa = PBXGroup;
 			children = (
+				D0CD54C7225EFF69009BCF61 /* Extensions */,
 				D084DAB6225C89F70068BC7F /* DomainLayer */,
 				D084DAA6225C71120068BC7F /* DataLayer */,
 				D084DAA1225C6B5B0068BC7F /* Parameters */,
@@ -312,6 +321,7 @@
 				D084DAB8225C8A2D0068BC7F /* CityTagRepository.swift */,
 				D084DABA225C8A5A0068BC7F /* RepositoryProtocol.swift */,
 				D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */,
+				D0844BCB225EE03B002D9718 /* WhetherRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				D084DABE225C8C360068BC7F /* CityTagModel.swift */,
+				D0844BCD225EE2A1002D9718 /* WhetherDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +359,7 @@
 			children = (
 				D0A02CCF225C973100FCB2F4 /* CityTagTranslater.swift */,
 				D0A02CD1225C976D00FCB2F4 /* TranslaterProtocol.swift */,
+				D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */,
 			);
 			path = Translater;
 			sourceTree = "<group>";
@@ -394,6 +406,14 @@
 				D008A370225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift */,
 			);
 			path = WhetherDetailView;
+			sourceTree = "<group>";
+		};
+		D0CD54C7225EFF69009BCF61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FC28C4B6C8EE0F01FCB40CC0 /* Frameworks */ = {
@@ -645,17 +665,21 @@
 				D084DAB2225C7DD50068BC7F /* DataStoreProtocol.swift in Sources */,
 				D084DABB225C8A5A0068BC7F /* RepositoryProtocol.swift in Sources */,
 				D008A36F225DD0FC00B8B7C1 /* WhetherDetailViewController.swift in Sources */,
+				D0CD54C9225EFFB9009BCF61 /* DateExtension.swift in Sources */,
 				D0A02CDA225D78BC00FCB2F4 /* PresenterProtocol.swift in Sources */,
 				D0844BC6225ECE47002D9718 /* DailyWhetherView.swift in Sources */,
 				D084DAB9225C8A2D0068BC7F /* CityTagRepository.swift in Sources */,
+				D0CD54CB225F0CC7009BCF61 /* WhetherTranslater.swift in Sources */,
 				D084DAA5225C6C770068BC7F /* Parameters.swift in Sources */,
 				D09226B6225CD92B001E4C7E /* CityTagUseCase.swift in Sources */,
 				D084DAB5225C86700068BC7F /* XMLDataParser.swift in Sources */,
 				D0A02CE6225D8FD300FCB2F4 /* AreaNameHeaderView.swift in Sources */,
 				D084DAAF225C7B920068BC7F /* CityTagDataStore.swift in Sources */,
 				D084DABF225C8C360068BC7F /* CityTagModel.swift in Sources */,
+				D0844BCC225EE03B002D9718 /* WhetherRepository.swift in Sources */,
 				D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */,
 				D0A02CE0225D87C400FCB2F4 /* AreaSelectViewPresenter.swift in Sources */,
+				D0844BCE225EE2A1002D9718 /* WhetherDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
