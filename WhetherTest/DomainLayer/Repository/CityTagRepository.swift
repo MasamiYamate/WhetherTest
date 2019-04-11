@@ -16,9 +16,6 @@ struct CityTagRepository: RepositoryProtocol {
     
     func request(_ callback: @escaping (XML.Accessor?) -> Void) {
         dataStore.request({ result in
-            if let tmp: XML.Accessor = result {
-                print("aaaa")
-            }
             callback(result)
         })
     }

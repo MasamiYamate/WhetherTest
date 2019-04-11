@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AreaNameHeaderView" customModule="WhetherTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-hZ-qvM">
+                    <rect key="frame" x="354" y="4" width="44" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="SLY-LI-uSX"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="down_arrow_icon_64px"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hogehoge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUB-Ja-NxU">
+                    <rect key="frame" x="16" y="8" width="322" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zu6-hZ-qvM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="9rh-MQ-37R"/>
+                <constraint firstItem="zu6-hZ-qvM" firstAttribute="leading" secondItem="jUB-Ja-NxU" secondAttribute="trailing" constant="16" id="Fpf-TE-x1Y"/>
+                <constraint firstAttribute="bottom" secondItem="zu6-hZ-qvM" secondAttribute="bottom" constant="4" id="UBe-Gu-mNz"/>
+                <constraint firstItem="jUB-Ja-NxU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ykh-Wp-sl0"/>
+                <constraint firstAttribute="bottom" secondItem="jUB-Ja-NxU" secondAttribute="bottom" constant="8" id="ja2-SH-fta"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zu6-hZ-qvM" secondAttribute="trailing" constant="16" id="kpM-cr-aTv"/>
+                <constraint firstItem="jUB-Ja-NxU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="tgo-hV-7UV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="nameLabel" destination="jUB-Ja-NxU" id="bTj-mG-y2R"/>
+                <outlet property="sectionOpenCloseBtn" destination="zu6-hZ-qvM" id="YeZ-Vz-lhg"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="52.566964285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down_arrow_icon_64px" width="64" height="64"/>
+    </resources>
+</document>

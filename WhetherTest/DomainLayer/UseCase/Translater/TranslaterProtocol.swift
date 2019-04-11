@@ -1,5 +1,5 @@
 //
-//  DataStoreProtocol.swift
+//  TranslaterProtocol.swift
 //  WhetherTest
 //
 //  Created by MasamiYamate on 2019/04/09.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol DataStoreProtocol {
+protocol TranslaterProtocol {
+    associatedtype Input
     associatedtype Output
-
-    func request (_ callback: @escaping (Output?) -> Void)
+    
+    static func translate(_ value: Input) -> Output
 }

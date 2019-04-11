@@ -13,10 +13,20 @@ import SwiftyXMLParser
 class CityModels: NSObject {
     //Dictionaryでは順番が担保されないため
     //Area表記は別の配列として保持する
-    var areas: [String] = []
+    private var _areas: [String] = []
+    var areas: [String] {
+        get {
+            return _areas
+        }
+    }
     
     //Area名をKeyにAreaに紐づくCityTagModelの配列保持させる
-    var cityModels: [String:[CityModel]] = [:]
+    private var _cityModels: [String:[CityModel]] = [:]
+    var cityModels: [String:[CityModel]] {
+        get {
+            return _cityModels
+        }
+    }
     
     init (value: XML.Element) {
         for child in value.childElements {
@@ -28,7 +38,7 @@ class CityModels: NSObject {
                     return
                 }
                 
-                areas.append(areaName)
+                _areas.append(areaName)
                 var tmpCityModels: [CityModel] = []
 
                 //pref配下のchildElementsから各地域情報を取得する
@@ -40,19 +50,42 @@ class CityModels: NSObject {
                     }
                 }
                 //地域名をKeyに各CityModelをディクショナリーにセット
-                cityModels[areaName] = tmpCityModels
+                //道南のみ複数存在しているため、既にkeyが存在する場合は
+                //既存の配列の末尾に追加する
+                if let existData: [CityModel] = _cityModels[areaName] {
+                    //既にKeyが存在する場合は末尾に追加
+                    _cityModels[areaName] = existData + tmpCityModels
+                }else{
+                    _cityModels[areaName] = tmpCityModels
+                }
             }
+        }
+        //全てのデータ処理後、名称の配列から重複値を取り除く
+        let orderdSet: NSOrderedSet = NSOrderedSet(array: _areas)
+        if let orderdSetAreas: [String] = orderdSet.array as? [String] {
+            _areas = orderdSetAreas
         }
     }
 }
 
 /// 名称、エリアIDのオブジェクト
 class CityModel: NSObject {
-    var name: String
-    var id: String
+    private var _name: String
+    var name: String {
+        get {
+            return _name
+        }
+    }
+    
+    private var _id: String
+    var id: String {
+        get {
+            return _id
+        }
+    }
     
     init(value: XML.Element) {
-        name = value.attributes["title"] ?? ""
-        id = value.attributes["id"] ?? ""
+        _name = value.attributes["title"] ?? ""
+        _id = value.attributes["id"] ?? ""
     }
 }

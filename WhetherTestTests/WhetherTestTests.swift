@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyXMLParser
 @testable import WhetherTest
 
 class WhetherTestTests: XCTestCase {
@@ -30,5 +31,22 @@ class WhetherTestTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    // MARK: 非同期通信周りのテストコード
+    /// 1次細分句定義表XMLの取得テスト
+    func testCityTagRequest () {
+        let repository = CityTagRepository()
+        repository.request({data in
+            XCTAssertNil(data, "XML.Accessor not found error")
+            let cityModels = CityTagTranslater.translate(data!)
+            XCTAssertNil(cityModels, "CityModels not found error")
+            let areaCount: Int = cityModels!.areas.count
+            let citysKeyCount: Int = cityModels!.cityModels.keys.count
+            //Area名称の件数とCitysのKeyの件数が合致している場合success
+            XCTAssertEqual(areaCount, citysKeyCount)
+        })
+    }
+    
+    
 
 }
