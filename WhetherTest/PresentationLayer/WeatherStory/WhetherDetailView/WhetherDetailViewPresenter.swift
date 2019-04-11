@@ -85,7 +85,4 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         viewController?.whetherScrollDataView.contentSize = setContentsSize
     }
     
-
-    
-    
 }

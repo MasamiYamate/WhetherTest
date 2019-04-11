@@ -31,6 +31,31 @@ class WhetherDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppearTask()
+        setupDelegate()
     }
+    
+    func setupDelegate () {
+        commentaryTableView.delegate = self
+        commentaryTableView.dataSource = self
+    }
+
+    
+}
+
+extension WhetherDetailViewController: UITableViewDelegate {
+    
+}
+
+extension WhetherDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "1"
+        return cell
+    }
+    
     
 }
