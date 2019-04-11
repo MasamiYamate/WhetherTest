@@ -48,6 +48,7 @@
 		D0A02CE6225D8FD300FCB2F4 /* AreaNameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */; };
 		D0CD54C9225EFFB9009BCF61 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */; };
 		D0CD54CB225F0CC7009BCF61 /* WhetherTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */; };
+		D0CD54CD225F0DAA009BCF61 /* WhetherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54CC225F0DAA009BCF61 /* WhetherUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaNameHeaderView.swift; sourceTree = "<group>"; };
 		D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherTranslater.swift; sourceTree = "<group>"; };
+		D0CD54CC225F0DAA009BCF61 /* WhetherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherUseCase.swift; sourceTree = "<group>"; };
 		E64A4F152D504A576F8D3E9B /* Pods-WhetherTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestUITests.release.xcconfig"; path = "Target Support Files/Pods-WhetherTestUITests/Pods-WhetherTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -331,6 +333,7 @@
 			children = (
 				D0A02CCE225C970800FCB2F4 /* Translater */,
 				D09226B5225CD92B001E4C7E /* CityTagUseCase.swift */,
+				D0CD54CC225F0DAA009BCF61 /* WhetherUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */,
 				D0A02CE0225D87C400FCB2F4 /* AreaSelectViewPresenter.swift in Sources */,
 				D0844BCE225EE2A1002D9718 /* WhetherDataModel.swift in Sources */,
+				D0CD54CD225F0DAA009BCF61 /* WhetherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
