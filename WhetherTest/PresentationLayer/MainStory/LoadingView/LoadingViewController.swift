@@ -22,7 +22,7 @@ class LoadingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewWillAppearTask()
+        self.startLoading()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,4 +30,27 @@ class LoadingViewController: UIViewController {
         presenter.viewDidAppearTask()
     }
     
+    // MARK: UIイベントなど
+    /// Loadingの開始
+    func startLoading () {
+        DispatchQueue.main.async {
+            self.loadingCircle.startAnimating()
+        }
+    }
+    
+    /// Loadingの終了
+    func stopLoading () {
+        DispatchQueue.main.async {
+            self.loadingCircle.stopAnimating()
+        }
+    }
+    
+    /// AreaSuggestViewに遷移します
+    func jumpAreaSuggestView () {
+        stopLoading()
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "LoadingViewToWhetherStory", sender: nil)
+        }
+    }
+
 }

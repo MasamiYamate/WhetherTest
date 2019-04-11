@@ -20,10 +20,6 @@ class LoadingViewPresenter: PresenterProtocol {
         cityTagUseCase = CityTagUseCase()
     }
     
-    func viewWillAppearTask() {
-        startLoading()
-    }
-    
     func viewDidAppearTask() {
         //View描画後、データ取得開始
         getCityData()
@@ -34,29 +30,8 @@ class LoadingViewPresenter: PresenterProtocol {
     func getCityData () {
         cityTagUseCase.request({
             //データ取得後、画面遷移させる
-            self.jumpAreaSuggestView()
+            self.viewController?.jumpAreaSuggestView()
         })
     }
     
-    // MARK: UIイベントなど
-    /// Loadingの開始
-    func startLoading () {
-        DispatchQueue.main.async {
-            self.viewController?.loadingCircle.startAnimating()
-        }
-    }
-    
-    /// Loadingの終了
-    func stopLoading () {
-        DispatchQueue.main.async {
-            self.viewController?.loadingCircle.stopAnimating()
-        }
-    }
-    
-    /// AreaSuggestViewに遷移します
-    func jumpAreaSuggestView () {
-        stopLoading()
-        viewController?.performSegue(withIdentifier: "LoadingViewToWhetherStory", sender: nil)
-    }
-
 }

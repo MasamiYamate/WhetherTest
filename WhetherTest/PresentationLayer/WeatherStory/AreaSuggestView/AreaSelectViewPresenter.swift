@@ -20,55 +20,34 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
     override init() {
         cityTagUseCase = CityTagUseCase()
     }
-    
-    func viewWillAppearTask() {
-        setupTableview()
-    }
-    
-    // MARK: delegate setup
-    func setupTableview () {
-        viewController?.AreaSelectTableView.delegate = self
-        viewController?.AreaSelectTableView.dataSource = self
-    }
-    
-    // MARK: UIイベントなど
-    func jumpToWhetherDetailView (_ cityId: String) {
-        viewController?.performSegue(withIdentifier: "AreaSelectViewToWhetherDetailView", sender: cityId)
-    }
 
-}
-
-extension AreaSelectViewPresenter: UITableViewDelegate , UITableViewDataSource {
-    
-    /// セクションの総数を返却する
+    // MARK: TableView生成に必要なデータを生成するメソッド群
+    /// セクションの総数(エリア名の総数)を取得します
     ///
-    /// - Parameter tableView: UITableView
-    /// - Returns: Int ... セクションの総数
-    func numberOfSections(in tableView: UITableView) -> Int {
+    /// - Returns: AreaTotalCount
+    func getTotalSectionCount () -> Int {
         return cityTagUseCase.getAreas().count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //HeaderViewの生成
-        let deviceW: CGFloat = UIScreen.main.bounds.size.width
-        let frame: CGRect = CGRect(x: 0, y: 0, width: deviceW, height: 40.0)
-        let areaNameHeader: AreaNameHeaderView = AreaNameHeaderView(frame: frame)
+    /// セクションに表示するエリア名を取得します
+    ///
+    /// - Parameter section: SectionNo
+    /// - Returns: AreaName
+    func getSectionTitle (_ section: Int) -> String {
         //エリア名称の抽出
         let areas = cityTagUseCase.getAreas()
         var setName: String?
         if section < areas.count {
             setName = areas[section]
         }
-        areaNameHeader.areaNameLabel.text = setName ?? ""
-        return areaNameHeader
+        return setName ?? ""
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //各Areaに属する都市名の数を返却します
+    /// 各Areaに属する都市名の総数を取得します
+    ///
+    /// - Parameter section: SectionNo
+    /// - Returns: CityCount
+    func getTotalCityCount (_ section: Int) -> Int {
         let areas = cityTagUseCase.getAreas()
         if section < areas.count {
             let name: String = areas[section]
@@ -78,34 +57,18 @@ extension AreaSelectViewPresenter: UITableViewDelegate , UITableViewDataSource {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.accessoryType = .disclosureIndicator
-        
+    /// 指定位置のCityModelを取得します
+    ///
+    /// - Parameter indexPath: 表示対象CellのIndexPath
+    /// - Returns: 指定したCityModel
+    func getCityModel (_ indexPath: IndexPath) -> CityModel? {
         let areas = cityTagUseCase.getAreas()
         if indexPath.section < areas.count {
             let name: String = areas[indexPath.section]
             let citys = cityTagUseCase.getCitys(name)
-            let setCity = citys[indexPath.row]
-            cell.textLabel?.text = setCity.name
-        }else{
-            cell.textLabel?.text = ""
+            return citys[indexPath.row]
         }
-        return cell
+        return nil
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let areas = cityTagUseCase.getAreas()
-        if indexPath.section < areas.count {
-            let name: String = areas[indexPath.section]
-            let citys = cityTagUseCase.getCitys(name)
-            let setCity = citys[indexPath.row]
-            let cityId = setCity.id
-            self.jumpToWhetherDetailView(cityId)
-        }
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
+
 }
-
-

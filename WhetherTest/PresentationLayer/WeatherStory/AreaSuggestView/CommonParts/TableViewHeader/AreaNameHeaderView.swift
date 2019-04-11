@@ -10,7 +10,7 @@ import UIKit
 
 class AreaNameHeaderView: UIView {
     
-    @IBOutlet weak var areaNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var sectionOpenCloseBtn: UIButton!
     
@@ -26,7 +26,7 @@ class AreaNameHeaderView: UIView {
     private func loadNib(){
         let view = Bundle.main.loadNibNamed("AreaNameHeaderView", owner: self, options: nil)?.first as! AreaNameHeaderView
         view.frame = self.bounds
-        areaNameLabel = view.areaNameLabel
+        nameLabel = view.nameLabel
         sectionOpenCloseBtn = view.sectionOpenCloseBtn
         sectionOpenCloseBtn.imageView?.contentMode = .scaleAspectFit
         self.addSubview(view)

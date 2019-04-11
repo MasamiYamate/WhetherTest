@@ -6,7 +6,7 @@
 //  Copyright © 2019 MasamiYamate. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PresenterProtocol {
     associatedtype VC
@@ -32,5 +32,7 @@ extension PresenterProtocol {
     func viewWillDisappearTask () {}
     
     func viewDidDisappearTask () {}
+    
+    func prepareTask(for segue: UIStoryboardSegue, sender: Any?) {}
     
 }

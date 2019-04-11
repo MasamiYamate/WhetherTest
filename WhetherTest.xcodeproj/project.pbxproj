@@ -10,6 +10,8 @@
 		43BF5E04CDAAB249708C0893 /* Pods_WhetherTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684B2DE7656AE8485A644E73 /* Pods_WhetherTestTests.framework */; };
 		6183452ADC9950978E8818CB /* Pods_WhetherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F426482EF92A764A0F36CD0 /* Pods_WhetherTest.framework */; };
 		6B70C254D1D6E1B17A5589B2 /* Pods_WhetherTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E58E45B6504B6594C0EA40D /* Pods_WhetherTestUITests.framework */; };
+		D008A36F225DD0FC00B8B7C1 /* WhetherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A36E225DD0FC00B8B7C1 /* WhetherDetailViewController.swift */; };
+		D008A371225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A370225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift */; };
 		D084DA70225C689E0068BC7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084DA6F225C689E0068BC7F /* AppDelegate.swift */; };
 		D084DA75225C689E0068BC7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D084DA73225C689E0068BC7F /* Main.storyboard */; };
 		D084DA77225C68A00068BC7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D084DA76225C68A00068BC7F /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		8E58E45B6504B6594C0EA40D /* Pods_WhetherTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhetherTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B097AB84D5D5658B52AE0402 /* Pods-WhetherTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestTests.release.xcconfig"; path = "Target Support Files/Pods-WhetherTestTests/Pods-WhetherTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB9E384AF8757DFADAF7A929 /* Pods-WhetherTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTest.release.xcconfig"; path = "Target Support Files/Pods-WhetherTest/Pods-WhetherTest.release.xcconfig"; sourceTree = "<group>"; };
+		D008A36E225DD0FC00B8B7C1 /* WhetherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherDetailViewController.swift; sourceTree = "<group>"; };
+		D008A370225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherDetailViewPresenter.swift; sourceTree = "<group>"; };
 		D084DA6C225C689E0068BC7F /* WhetherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhetherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D084DA6F225C689E0068BC7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D084DA74225C689E0068BC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +146,13 @@
 				E64A4F152D504A576F8D3E9B /* Pods-WhetherTestUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D008A372225ECB6500B8B7C1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D084DA63225C689E0068BC7F = {
@@ -313,6 +324,7 @@
 		D09226B7225CE1D9001E4C7E /* WeatherStory */ = {
 			isa = PBXGroup;
 			children = (
+				D0A02CE7225DD0C700FCB2F4 /* WhetherDetailView */,
 				D084DA9E225C69BE0068BC7F /* AreaSuggestView */,
 				D09226B8225CE1F2001E4C7E /* Weather.storyboard */,
 			);
@@ -360,6 +372,16 @@
 				D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */,
 			);
 			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		D0A02CE7225DD0C700FCB2F4 /* WhetherDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D008A372225ECB6500B8B7C1 /* New Group */,
+				D008A36E225DD0FC00B8B7C1 /* WhetherDetailViewController.swift */,
+				D008A370225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift */,
+			);
+			path = WhetherDetailView;
 			sourceTree = "<group>";
 		};
 		FC28C4B6C8EE0F01FCB40CC0 /* Frameworks */ = {
@@ -602,10 +624,12 @@
 				D084DAA0225C69EB0068BC7F /* AreaSelectViewController.swift in Sources */,
 				D0A02CD0225C973100FCB2F4 /* CityTagTranslater.swift in Sources */,
 				D084DA70225C689E0068BC7F /* AppDelegate.swift in Sources */,
+				D008A371225DD10C00B8B7C1 /* WhetherDetailViewPresenter.swift in Sources */,
 				D0A02CD8225D788300FCB2F4 /* LoadingViewPresenter.swift in Sources */,
 				D0A02CDE225D814E00FCB2F4 /* TmpDataRepository.swift in Sources */,
 				D084DAB2225C7DD50068BC7F /* DataStoreProtocol.swift in Sources */,
 				D084DABB225C8A5A0068BC7F /* RepositoryProtocol.swift in Sources */,
+				D008A36F225DD0FC00B8B7C1 /* WhetherDetailViewController.swift in Sources */,
 				D0A02CDA225D78BC00FCB2F4 /* PresenterProtocol.swift in Sources */,
 				D084DAB9225C8A2D0068BC7F /* CityTagRepository.swift in Sources */,
 				D084DAA5225C6C770068BC7F /* Parameters.swift in Sources */,
