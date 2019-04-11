@@ -85,19 +85,27 @@ final class WhetherDataModel: NSObject {
 }
 
 final class WhetherForecastModel: NSObject {
-
+    
+    enum DateType: String {
+        case ToDay = "今日"
+        case Tomorrow = "明日"
+        case DayAfterTomorrow = "明後日"
+    }
+    
     //予報日
     var date: Date?
     //予報日(今日 , 明日 , 明後日)
     var dateLabel: String = ""
+    var dateType: DateType?
+    
     //天気の種別 (晴れ、曇り、雨など)
     var telop: String = ""
     //アイコンのURL
     var iconImgUrl: String = ""
 
     //最高気温
-    var maxTemp: String = ""
-    var minTemp: String = ""
+    var maxTemp: String = "-"
+    var minTemp: String = "-"
 
     init(data: JSON) {
         if let strDate: String = data["date"].string {
@@ -105,17 +113,31 @@ final class WhetherForecastModel: NSObject {
         }
         dateLabel = data["dateLabel"].string ?? ""
         telop = data["telop"].string ?? ""
+        switch dateLabel {
+        case DateType.ToDay.rawValue:
+            dateType = .ToDay
+        case DateType.Tomorrow.rawValue:
+            dateType = .Tomorrow
+        case DateType.DayAfterTomorrow.rawValue:
+            dateType = .DayAfterTomorrow
+        default:
+            break
+        }
         if let image = data["image"].dictionary {
             iconImgUrl = image["url"]?.string ?? ""
         }
         if let tmperature = data["temperature"].dictionary {
             if let max = tmperature["max"]?.dictionary {
-                maxTemp = max["celsius"]?.string ?? ""
+                if let intMaxTemp: String = max["celsius"]?.string {
+                    maxTemp = "\(intMaxTemp)"
+                }
             }
             if let min = tmperature["min"]?.dictionary {
-                minTemp = min["celsius"]?.string ?? ""
+                if let intMinTemp: String = min["celsius"]?.string {
+                    minTemp = "\(intMinTemp)"
+                }
             }
         }
     }
-
+    
 }

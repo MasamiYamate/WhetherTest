@@ -54,4 +54,53 @@ class CityTagUseCase {
         return cityData?.cityModels[areaName] ?? []
     }
     
+    /// セクションの総数(エリア名の総数)を取得します
+    ///
+    /// - Returns: AreaTotalCount
+    func getTotalSectionCount () -> Int {
+        return getAreas().count
+    }
+    
+    /// セクションに表示するエリア名を取得します
+    ///
+    /// - Parameter section: SectionNo
+    /// - Returns: AreaName
+    func getSectionTitle (_ section: Int) -> String {
+        //エリア名称の抽出
+        let areas = self.getAreas()
+        var setName: String?
+        if section < areas.count {
+            setName = areas[section]
+        }
+        return setName ?? ""
+    }
+    
+    /// 各Areaに属する都市名の総数を取得します
+    ///
+    /// - Parameter section: SectionNo
+    /// - Returns: CityCount
+    func getTotalCityCount (_ section: Int) -> Int {
+        let areas = getAreas()
+        if section < areas.count {
+            let name: String = areas[section]
+            let citys = getCitys(name)
+            return citys.count
+        }
+        return 0
+    }
+    
+    /// 指定位置のCityModelを取得します
+    ///
+    /// - Parameter indexPath: 表示対象CellのIndexPath
+    /// - Returns: 指定したCityModel
+    func getCityModel (_ indexPath: IndexPath) -> CityModel? {
+        let areas = getAreas()
+        if indexPath.section < areas.count {
+            let name: String = areas[indexPath.section]
+            let citys = getCitys(name)
+            return citys[indexPath.row]
+        }
+        return nil
+    }
+    
 }

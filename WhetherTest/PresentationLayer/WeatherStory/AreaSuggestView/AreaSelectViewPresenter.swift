@@ -26,7 +26,7 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
     ///
     /// - Returns: AreaTotalCount
     func getTotalSectionCount () -> Int {
-        return cityTagUseCase.getAreas().count
+        return cityTagUseCase.getTotalSectionCount()
     }
     
     /// セクションに表示するエリア名を取得します
@@ -34,13 +34,7 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
     /// - Parameter section: SectionNo
     /// - Returns: AreaName
     func getSectionTitle (_ section: Int) -> String {
-        //エリア名称の抽出
-        let areas = cityTagUseCase.getAreas()
-        var setName: String?
-        if section < areas.count {
-            setName = areas[section]
-        }
-        return setName ?? ""
+        return cityTagUseCase.getSectionTitle(section)
     }
     
     /// 各Areaに属する都市名の総数を取得します
@@ -48,13 +42,7 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
     /// - Parameter section: SectionNo
     /// - Returns: CityCount
     func getTotalCityCount (_ section: Int) -> Int {
-        let areas = cityTagUseCase.getAreas()
-        if section < areas.count {
-            let name: String = areas[section]
-            let citys = cityTagUseCase.getCitys(name)
-            return citys.count
-        }
-        return 0
+        return cityTagUseCase.getTotalCityCount(section)
     }
     
     /// 指定位置のCityModelを取得します
@@ -62,13 +50,7 @@ class AreaSelectViewPresenter: NSObject , PresenterProtocol {
     /// - Parameter indexPath: 表示対象CellのIndexPath
     /// - Returns: 指定したCityModel
     func getCityModel (_ indexPath: IndexPath) -> CityModel? {
-        let areas = cityTagUseCase.getAreas()
-        if indexPath.section < areas.count {
-            let name: String = areas[indexPath.section]
-            let citys = cityTagUseCase.getCitys(name)
-            return citys[indexPath.row]
-        }
-        return nil
+        return cityTagUseCase.getCityModel(indexPath)
     }
 
 }
