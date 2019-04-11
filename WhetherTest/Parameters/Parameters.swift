@@ -17,6 +17,7 @@ class WTApi {
 
     enum WhetherPath: String {
         case CITY_TAGS_PATH = "forecast/rss/primary_area.xml"
+        case WHETHER_PATH = "forecast/webservice/json/v1?"
     }
     
 }
