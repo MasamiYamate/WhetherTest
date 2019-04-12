@@ -19,7 +19,7 @@ extension Date {
     static func trans(_ strDate: String , format fmt: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = fmt
-        return formatter.date(from: fmt)
+        return formatter.date(from: strDate)
     }
     
     /// 指定フォーマットを元にDateからStringを出力する

@@ -52,12 +52,12 @@ final class WhetherDataModel: NSObject {
         title = data["title"].string ?? ""
         link = data["link"].string ?? ""
         if let strPublicTime: String = data["publicTime"].string {
-            publicTime = Date.trans(strPublicTime, format: "yyyy-MM-dd")
+            publicTime = Date.trans(strPublicTime, format: "yyyy-MM-dd'T'HH:mm:ssZZZZZ")
         }
         if let description = data["description"].dictionary {
             guideText = description["text"]?.string ?? ""
             if let strPublicTime: String = description["publicTime"]?.string {
-                guidePublicTime = Date.trans(strPublicTime, format: "yyyy-MM-dd")
+                guidePublicTime = Date.trans(strPublicTime, format: "yyyy-MM-dd'T'HH:mm:ssZZZZZ")
             }
         }
         
@@ -81,6 +81,7 @@ final class WhetherDataModel: NSObject {
                 }
             }
         }
+        print("aaa")
     }
 }
 
