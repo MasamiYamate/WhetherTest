@@ -44,11 +44,11 @@
 		D0A02CDC225D7F9400FCB2F4 /* TmpDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDB225D7F9400FCB2F4 /* TmpDataStore.swift */; };
 		D0A02CDE225D814E00FCB2F4 /* TmpDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */; };
 		D0A02CE0225D87C400FCB2F4 /* AreaSelectViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CDF225D87C400FCB2F4 /* AreaSelectViewPresenter.swift */; };
-		D0A02CE4225D8FBE00FCB2F4 /* AreaNameHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A02CE3225D8FBE00FCB2F4 /* AreaNameHeaderView.xib */; };
-		D0A02CE6225D8FD300FCB2F4 /* AreaNameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */; };
 		D0CD54C9225EFFB9009BCF61 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */; };
 		D0CD54CB225F0CC7009BCF61 /* WhetherTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */; };
 		D0CD54CD225F0DAA009BCF61 /* WhetherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD54CC225F0DAA009BCF61 /* WhetherUseCase.swift */; };
+		D0D235C022606474003701EB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D235BF22606474003701EB /* LoadingView.swift */; };
+		D0D235C222606482003701EB /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D235C122606482003701EB /* LoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,11 +117,11 @@
 		D0A02CDB225D7F9400FCB2F4 /* TmpDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpDataStore.swift; sourceTree = "<group>"; };
 		D0A02CDD225D814E00FCB2F4 /* TmpDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmpDataRepository.swift; sourceTree = "<group>"; };
 		D0A02CDF225D87C400FCB2F4 /* AreaSelectViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSelectViewPresenter.swift; sourceTree = "<group>"; };
-		D0A02CE3225D8FBE00FCB2F4 /* AreaNameHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaNameHeaderView.xib; sourceTree = "<group>"; };
-		D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaNameHeaderView.swift; sourceTree = "<group>"; };
 		D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		D0CD54CA225F0CC7009BCF61 /* WhetherTranslater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherTranslater.swift; sourceTree = "<group>"; };
 		D0CD54CC225F0DAA009BCF61 /* WhetherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhetherUseCase.swift; sourceTree = "<group>"; };
+		D0D235BF22606474003701EB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D0D235C122606482003701EB /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		E64A4F152D504A576F8D3E9B /* Pods-WhetherTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhetherTestUITests.release.xcconfig"; path = "Target Support Files/Pods-WhetherTestUITests/Pods-WhetherTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +235,7 @@
 		D084DA9D225C69850068BC7F /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D0D235BD226063F4003701EB /* CommonView */,
 				D0A02CD3225D776E00FCB2F4 /* MainStory */,
 				D09226B7225CE1D9001E4C7E /* WeatherStory */,
 				D0A02CD9225D78BC00FCB2F4 /* PresenterProtocol.swift */,
@@ -245,7 +246,6 @@
 		D084DA9E225C69BE0068BC7F /* AreaSuggestView */ = {
 			isa = PBXGroup;
 			children = (
-				D0A02CE1225D8F8500FCB2F4 /* CommonParts */,
 				D084DA9F225C69EB0068BC7F /* AreaSelectViewController.swift */,
 				D0A02CDF225D87C400FCB2F4 /* AreaSelectViewPresenter.swift */,
 			);
@@ -384,23 +384,6 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		D0A02CE1225D8F8500FCB2F4 /* CommonParts */ = {
-			isa = PBXGroup;
-			children = (
-				D0A02CE2225D8F9300FCB2F4 /* TableViewHeader */,
-			);
-			path = CommonParts;
-			sourceTree = "<group>";
-		};
-		D0A02CE2225D8F9300FCB2F4 /* TableViewHeader */ = {
-			isa = PBXGroup;
-			children = (
-				D0A02CE3225D8FBE00FCB2F4 /* AreaNameHeaderView.xib */,
-				D0A02CE5225D8FD300FCB2F4 /* AreaNameHeaderView.swift */,
-			);
-			path = TableViewHeader;
-			sourceTree = "<group>";
-		};
 		D0A02CE7225DD0C700FCB2F4 /* WhetherDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +400,23 @@
 				D0CD54C8225EFFB9009BCF61 /* DateExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0D235BD226063F4003701EB /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				D0D235BE22606456003701EB /* LoadingView */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		D0D235BE22606456003701EB /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				D0D235BF22606474003701EB /* LoadingView.swift */,
+				D0D235C122606482003701EB /* LoadingView.xib */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		FC28C4B6C8EE0F01FCB40CC0 /* Frameworks */ = {
@@ -540,9 +540,9 @@
 				D0844BC4225ECE22002D9718 /* DailyWhetherView.xib in Resources */,
 				D084DA7A225C68A00068BC7F /* LaunchScreen.storyboard in Resources */,
 				D09226B9225CE1F2001E4C7E /* Weather.storyboard in Resources */,
+				D0D235C222606482003701EB /* LoadingView.xib in Resources */,
 				D084DA77225C68A00068BC7F /* Assets.xcassets in Resources */,
 				D084DA75225C689E0068BC7F /* Main.storyboard in Resources */,
-				D0A02CE4225D8FBE00FCB2F4 /* AreaNameHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,13 +676,13 @@
 				D084DAA5225C6C770068BC7F /* Parameters.swift in Sources */,
 				D09226B6225CD92B001E4C7E /* CityTagUseCase.swift in Sources */,
 				D084DAB5225C86700068BC7F /* XMLDataParser.swift in Sources */,
-				D0A02CE6225D8FD300FCB2F4 /* AreaNameHeaderView.swift in Sources */,
 				D084DAAF225C7B920068BC7F /* CityTagDataStore.swift in Sources */,
 				D084DABF225C8C360068BC7F /* CityTagModel.swift in Sources */,
 				D0844BCC225EE03B002D9718 /* WhetherRepository.swift in Sources */,
 				D0A02CD2225C976D00FCB2F4 /* TranslaterProtocol.swift in Sources */,
 				D0A02CE0225D87C400FCB2F4 /* AreaSelectViewPresenter.swift in Sources */,
 				D0844BCE225EE2A1002D9718 /* WhetherDataModel.swift in Sources */,
+				D0D235C022606474003701EB /* LoadingView.swift in Sources */,
 				D0CD54CD225F0DAA009BCF61 /* WhetherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

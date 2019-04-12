@@ -29,12 +29,15 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
     }
     
     func viewWillAppearTask() {
-        //データのリクエスト
-        whetherUseCase?.request({
-            self.setupView()
-            self.setupScrollView()
-            //データ取得後TableviewをReloadさせます
-            self.viewController?.commentaryTableView.reloadData()
+        viewController?.loadingView?.open(complete: {
+            //データのリクエスト
+            self.whetherUseCase?.request({
+                self.setupView()
+                self.setupScrollView()
+                //データ取得後TableviewをReloadさせます
+                self.viewController?.commentaryTableView.reloadData()
+                self.viewController?.loadingView?.close(complete: nil)
+            })
         })
     }
     

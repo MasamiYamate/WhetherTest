@@ -20,28 +20,32 @@ class WhetherDetailViewController: UIViewController {
     @IBOutlet weak var whetherScrollDataView: UIScrollView!
     
     @IBOutlet weak var commentaryTableView: UITableView!
+    
+    var loadingView: LoadingView?
 
     var presenter = WhetherDetailViewPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLoadingView()
         presenter.viewDidLoadTask(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppearTask()
-        setupDelegate()
+        setupDataSource()
     }
     
-    func setupDelegate () {
-        commentaryTableView.delegate = self
+    func setupLoadingView () {
+        let rect = UIScreen.main.bounds
+        loadingView = LoadingView(frame: rect)
+        view.addSubview(loadingView!)
+    }
+    
+    func setupDataSource () {
         commentaryTableView.dataSource = self
     }
-    
-}
-
-extension WhetherDetailViewController: UITableViewDelegate {
     
 }
 
