@@ -1,0 +1,2 @@
+# WhetherTest
+Livedoorお天気APIを使用し、各都市の天気を表示するデモアプリ
