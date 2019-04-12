@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class WhetherUseCalse {
+class WhetherUseCase {
     
     // MARK: Presenterからアクセスするデータ群
     private var whetherData: WhetherDataModel?
@@ -33,6 +33,17 @@ class WhetherUseCalse {
     }
     
     // MARK: 各種天気情報の取得
+    /// お天気情報のデータの有無を返却します
+    ///
+    /// - Returns: Bool
+    func isDataGeted () -> Bool {
+        if self.whetherData != nil {
+            return true
+        }else{
+            return false
+        }
+    }
+    
     /// Titleの取得
     ///
     /// - Returns: Title

@@ -47,6 +47,15 @@ class WhetherDetailViewController: UIViewController {
         commentaryTableView.dataSource = self
     }
     
+    // MARK: エラー時のアラート表示
+    func openErrAlert () {
+        let errAl = UIAlertController(title: "データ取得エラー", message: "お天気情報の取得に失敗しました", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        })
+        errAl.addAction(ok)
+        self.present(errAl, animated: true, completion: nil)
+    }
 }
 
 extension WhetherDetailViewController: UITableViewDataSource {
@@ -131,6 +140,5 @@ extension WhetherDetailViewController: UITableViewDataSource {
         cell.textLabel?.text = presenter.getCopyright()
         return cell
     }
-    
     
 }

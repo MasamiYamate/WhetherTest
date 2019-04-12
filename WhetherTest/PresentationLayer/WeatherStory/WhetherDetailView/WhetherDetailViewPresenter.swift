@@ -13,7 +13,7 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
     
     var viewController: WhetherDetailViewController?
     
-    var whetherUseCase: WhetherUseCalse?
+    var whetherUseCase: WhetherUseCase?
     
     var useCityId: String?
     
@@ -25,18 +25,23 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         guard let tmpCityId: String = useCityId else {
             return
         }
-        whetherUseCase = WhetherUseCalse(tmpCityId)
+        whetherUseCase = WhetherUseCase(tmpCityId)
     }
     
     func viewWillAppearTask() {
         viewController?.loadingView?.open(complete: {
             //データのリクエスト
             self.whetherUseCase?.request({
-                self.setupView()
-                self.setupScrollView()
-                //データ取得後TableviewをReloadさせます
-                self.viewController?.commentaryTableView.reloadData()
-                self.viewController?.loadingView?.close(complete: nil)
+                if self.whetherUseCase!.isDataGeted() {
+                    self.setupView()
+                    self.setupScrollView()
+                    //データ取得後TableviewをReloadさせます
+                    self.viewController?.commentaryTableView.reloadData()
+                    self.viewController?.loadingView?.close(complete: nil)
+                }else{
+                    //データがなかった場合エラーアラートを表示します
+                    self.viewController?.openErrAlert()
+                }
             })
         })
     }
