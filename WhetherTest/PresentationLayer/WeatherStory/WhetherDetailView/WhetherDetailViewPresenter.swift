@@ -33,6 +33,8 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         whetherUseCase?.request({
             self.setupView()
             self.setupScrollView()
+            //データ取得後TableviewをReloadさせます
+            self.viewController?.commentaryTableView.reloadData()
         })
     }
     
@@ -83,6 +85,35 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         }
         let setContentsSize: CGSize = CGSize(width: addXPos, height: setVH)
         viewController?.whetherScrollDataView.contentSize = setContentsSize
+    }
+    
+    /// 天気予報の予報文を取得します
+    ///
+    /// - Returns: 予報文
+    func getGuideText () -> String {
+        return whetherUseCase?.getGuide() ?? ""
+    }
+    
+    /// コピーライトを取得します
+    ///
+    /// - Returns: Copyright
+    func getCopyright () -> String {
+        return whetherUseCase?.getCopyright() ?? ""
+    }
+    
+    /// プロバイダーの件数を取得します
+    ///
+    /// - Returns: Provider件数
+    func getProviderCount () -> Int {
+        return whetherUseCase?.getProviderCount() ?? 0
+    }
+    
+    /// プロバイダーの名称を取得します
+    ///
+    /// - Parameter idx: 配列のindex
+    /// - Returns: プロバイダー名称
+    func getProviderName (_ idx: Int) -> String {
+        return whetherUseCase?.getProviderName(idx) ?? ""
     }
     
 }
