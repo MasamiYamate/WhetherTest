@@ -28,6 +28,11 @@ class AreaSelectViewController: UIViewController {
         setupDelegate()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        areaSelectTableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVc: WhetherDetailViewController = segue.destination as? WhetherDetailViewController {
             guard let tmpCityId: String = sender as? String else {
@@ -43,11 +48,13 @@ class AreaSelectViewController: UIViewController {
     }
     
     // MARK: 画面遷移イベント
-    
+    /// 天気詳細画面へ遷移
+    ///
+    /// - Parameter cityId: 詳細の天気を見たい都市のCityId
     func jumpToWhetherDetailView (_ cityId: String) {
         self.performSegue(withIdentifier: "AreaSelectViewToWhetherDetailView", sender: cityId)
     }
-    
+
 }
 
 extension AreaSelectViewController: UITableViewDataSource {
@@ -59,16 +66,11 @@ extension AreaSelectViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40.0
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //HeaderViewの生成
-        let deviceW: CGFloat = UIScreen.main.bounds.size.width
-        let frame: CGRect = CGRect(x: 0, y: 0, width: deviceW, height: 40.0)
-        let areaNameHeader: AreaNameHeaderView = AreaNameHeaderView(frame: frame)
-        areaNameHeader.nameLabel.text = presenter.getSectionTitle(section)
-        return areaNameHeader
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter.getSectionTitle(section)
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getTotalCityCount(section)
     }

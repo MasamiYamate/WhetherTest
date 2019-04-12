@@ -33,6 +33,4 @@ class DailyWhetherView: UIView {
         self.addSubview(view)
     }
 
-    
-    
 }

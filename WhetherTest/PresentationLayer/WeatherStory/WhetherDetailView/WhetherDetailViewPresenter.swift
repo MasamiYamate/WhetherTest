@@ -13,7 +13,7 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
     
     var viewController: WhetherDetailViewController?
     
-    var whetherUseCase: WhetherUseCalse?
+    var whetherUseCase: WhetherUseCase?
     
     var useCityId: String?
     
@@ -25,14 +25,24 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         guard let tmpCityId: String = useCityId else {
             return
         }
-        whetherUseCase = WhetherUseCalse(tmpCityId)
+        whetherUseCase = WhetherUseCase(tmpCityId)
     }
     
     func viewWillAppearTask() {
-        //データのリクエスト
-        whetherUseCase?.request({
-            self.setupView()
-            self.setupScrollView()
+        viewController?.loadingView?.open(complete: {
+            //データのリクエスト
+            self.whetherUseCase?.request({
+                if self.whetherUseCase!.isDataGeted() {
+                    self.setupView()
+                    self.setupScrollView()
+                    //データ取得後TableviewをReloadさせます
+                    self.viewController?.commentaryTableView.reloadData()
+                    self.viewController?.loadingView?.close(complete: nil)
+                }else{
+                    //データがなかった場合エラーアラートを表示します
+                    self.viewController?.openErrAlert()
+                }
+            })
         })
     }
     
@@ -85,7 +95,33 @@ class WhetherDetailViewPresenter: NSObject , PresenterProtocol {
         viewController?.whetherScrollDataView.contentSize = setContentsSize
     }
     
-
+    /// 天気予報の予報文を取得します
+    ///
+    /// - Returns: 予報文
+    func getGuideText () -> String {
+        return whetherUseCase?.getGuide() ?? ""
+    }
     
+    /// コピーライトを取得します
+    ///
+    /// - Returns: Copyright
+    func getCopyright () -> String {
+        return whetherUseCase?.getCopyright() ?? ""
+    }
+    
+    /// プロバイダーの件数を取得します
+    ///
+    /// - Returns: Provider件数
+    func getProviderCount () -> Int {
+        return whetherUseCase?.getProviderCount() ?? 0
+    }
+    
+    /// プロバイダーの名称を取得します
+    ///
+    /// - Parameter idx: 配列のindex
+    /// - Returns: プロバイダー名称
+    func getProviderName (_ idx: Int) -> String {
+        return whetherUseCase?.getProviderName(idx) ?? ""
+    }
     
 }
