@@ -81,7 +81,6 @@ final class WhetherDataModel: NSObject {
                 }
             }
         }
-        print("aaa")
     }
 }
 
